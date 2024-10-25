@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.semestr4newlaba.HelloController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="672.800048828125" minWidth="10.0" prefWidth="575.2000122070312" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="394.39996337890625" minWidth="10.0" prefWidth="224.79998779296875" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="195.20001220703125" minHeight="14.399999618530273" prefHeight="23.20001792907715" />
+        <RowConstraints maxHeight="585.0000003814697" minHeight="10.0" prefHeight="576.1999820709228" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <Pane fx:id="SimulationArea" prefHeight="477.0" prefWidth="537.0" style="-fx-background-color: #808080;" GridPane.rowIndex="1" />
+        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: White;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <children>
+                <Label fx:id="CatCountLabel" layoutX="16.0" layoutY="7.0" text="Cat count: " textFill="#c49411" visible="false" />
+                <Label fx:id="DogCountLabel" layoutX="14.0" layoutY="30.0" text="Dog count: " textFill="#039e00" visible="false" />
+                <Button fx:id="ButtonStart" layoutX="44.0" layoutY="54.0" mnemonicParsing="false" onAction="#ButtonStart" prefHeight="27.0" prefWidth="62.0" style="-fx-background-color: ffffe0; -fx-border-width: 1; -fx-border-radius: 3; -fx-border-color: Black;" text="Start" />
+                <Button fx:id="ButtonStop" disable="true" layoutX="128.0" layoutY="54.0" mnemonicParsing="false" onAction="#ButtonStop" prefHeight="27.0" prefWidth="62.0" style="-fx-background-color: ffffe0; -fx-border-width: 1; -fx-border-radius: 3; -fx-border-color: Black;" text="Stop" />
+                <RadioButton fx:id="RadioShowTime" layoutX="18.0" layoutY="88.0" mnemonicParsing="false" onAction="#RadioButtonAction" prefHeight="0.0" prefWidth="80.0" selected="true" text="Show Time">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="RadioButton" />
+                    </toggleGroup>
+                </RadioButton>
+                <CheckBox fx:id="ShowInformationBox" layoutX="16.0" layoutY="140.0" mnemonicParsing="false" onAction="#ShowInformationBox" text="Show informaion" />
+                <TextField fx:id="TextFieldPeriodCat" layoutX="16.0" layoutY="180.0" onAction="#TextFieldPeriodCat" prefHeight="16.0" prefWidth="149.0" />
+                <Text layoutX="17.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Период рождения кошек в мс" />
+                <TextField fx:id="TextFieldPeriodDog" layoutX="18.0" layoutY="222.0" onAction="#TextFieldPeriodDog" />
+                <Text layoutX="19.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Период рождения собак в мс" />
+                <Text layoutX="19.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Шанс появления кота" />
+                <ComboBox fx:id="ComboBoxCat" layoutX="18.0" layoutY="264.0" onAction="#ComboBoxCat" prefWidth="150.0" />
+                <Text layoutX="19.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Шанс появления собаки" />
+                <ComboBox fx:id="ComboBoxDog" layoutX="18.0" layoutY="306.0" onAction="#ComboBoxDog" prefWidth="150.0" />
+                <TextField fx:id="CatSpawnField" layoutX="19.0" layoutY="348.0" onAction="#CatSpawnField" />
+                <Text layoutX="20.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Время жизни кошек в мс" />
+                <TextField fx:id="DogSpawnField" layoutX="19.0" layoutY="390.0" onAction="#DogSpawnField" />
+                <Text layoutX="20.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Время жизни собак в мс" />
+                <Button fx:id="UpdateButton" layoutX="19.0" layoutY="542.0" mnemonicParsing="false" onAction="#UpdateButton" prefHeight="27.0" prefWidth="113.0" style="-fx-background-color: ff55ff; -fx-border-width: 1; -fx-border-radius: 3; -fx-border-color: Black;" text="Update" />
+                <RadioButton fx:id="RadioHideTime" layoutX="18.0" layoutY="115.0" mnemonicParsing="false" onAction="#RadioButtonAction" text="Hide Time" toggleGroup="$RadioButton" />
+            <Button fx:id="ShowPetsButton" layoutX="20.0" layoutY="505.0" mnemonicParsing="false" onAction="#ShowPetsButton" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: ff55ff; -fx-border-image-width: 1; -fx-border-radius: 3; -fx-border-color: Black;" text="Show Objects" />
+            <CheckBox fx:id="CatAIBox" layoutX="143.0" layoutY="510.0" mnemonicParsing="false" onAction="#CatAIAction" text="CatAI" />
+            <CheckBox fx:id="DogAIBox" layoutX="143.0" layoutY="547.0" mnemonicParsing="false" onAction="#DogAIAction" text="DogAI" />
+            <TextField fx:id="CatSpeedField" layoutX="19.0" layoutY="432.0" onAction="#CatSpeedField" />
+            <Text layoutX="20.0" layoutY="428.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Скорость кошек" />
+            <TextField fx:id="DogSpeedField" layoutX="19.0" layoutY="474.0" onAction="#DogSpeedField" />
+            <Text layoutX="20.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Скорость собак" />
+            </children>
+        </Pane>
+        <MenuBar prefHeight="28.0" prefWidth="576.0" style="-fx-background-color: White;">
+            <menus>
+            <Menu mnemonicParsing="false" text="Файл">
+               <items>
+                  <MenuItem fx:id="FileSaveButton" mnemonicParsing="false" onAction="#FileSaveButton" text="Сохранить" />
+                  <MenuItem fx:id="FileLoadButton" mnemonicParsing="false" onAction="#FileLoadButton" text="Загрузить" />
+               </items>
+            </Menu>
+                <Menu mnemonicParsing="false" text="Меню">
+                    <items>
+                        <RadioMenuItem fx:id="MenuRadioShowTime" mnemonicParsing="false" onAction="#RadioButtonAction" text="Show Timer" toggleGroup="$RadioButton" />
+                        <RadioMenuItem fx:id="MenuRadioHideTime" mnemonicParsing="false" onAction="#RadioButtonAction" text="Hide Timer" toggleGroup="$RadioButton" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="MenuButtonStart" mnemonicParsing="false" onAction="#ButtonStart" text="Start simulation" />
+                        <MenuItem fx:id="MenuButtonStop" mnemonicParsing="false" onAction="#ButtonStop" text="Stop simulation" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <CheckMenuItem fx:id="MenuShowInformationBox" mnemonicParsing="false" onAction="#MenuShowInformationBox" text="Show information" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <CheckMenuItem fx:id="checkGenerationCat" mnemonicParsing="false" onAction="#checkGenerationCat" selected="true" text="GenerationCat" />
+                  <CheckMenuItem fx:id="checkGenerationDog" mnemonicParsing="false" onAction="#checkGenerationDog" selected="true" text="GenerationDog" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="Приоритет потоков">
+                     <items>
+                        <Menu mnemonicParsing="false" text="Генерация кошек">
+                          <items>
+                              <RadioMenuItem fx:id="RBMainMaxprioritet" mnemonicParsing="false" onAction="#MaxprioritetMainThread" text="Максимальный" />
+                              <RadioMenuItem fx:id="RBMainAverageprioritet" disable="true" mnemonicParsing="false" onAction="#AverageprioritetMainThread" selected="true" text="Средний" />
+                              <RadioMenuItem fx:id="RBMainMinprioritet" mnemonicParsing="false" onAction="#MinprioritetMainThread" text="Минимальный" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Генерация собак">
+                          <items>
+                              <RadioMenuItem fx:id="DogRBMaxPrioritet" mnemonicParsing="false" onAction="#DogRBMaxPrioritetAction" text="Максимальный" />
+                              <RadioMenuItem fx:id="DogRBAveragePrioritet" disable="true" mnemonicParsing="false" onAction="#DogRBAveragePrioritetAction" selected="true" text="Средний" />
+                              <RadioMenuItem fx:id="DogRBMinPrioritet" mnemonicParsing="false" onAction="#DogRBMinPrioritetAction" text="Минимальный" />
+                          </items>
+                        </Menu>
+                     </items>
+                  </Menu>
+                  <MenuItem fx:id="ConsoleButton" mnemonicParsing="false" onAction="#ConsoleButton" text="Консоль" />
+                  <Menu fx:id="MenuClient" mnemonicParsing="false" onAction="#MenuClient" text="Клиенты" />
+                    </items>
+                </Menu>
+            <Menu fx:id="DataBases" mnemonicParsing="false" onAction="#DataBases" text="База данных">
+               <items>
+                  <Menu mnemonicParsing="false" text="Загрузить в БД">
+                    <items>
+                        <MenuItem fx:id="LoadBDAll" mnemonicParsing="false" onAction="#LoadBDAll" text="Всех" />
+                        <MenuItem fx:id="LoadBDCat" mnemonicParsing="false" onAction="#LoadBDCat" text="Кошек" />
+                        <MenuItem fx:id="LoadBDDog" mnemonicParsing="false" onAction="#LoadBDDog" text="Собак" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Загрузить из БД">
+                    <items>
+                        <MenuItem fx:id="ReadBDAll" mnemonicParsing="false" onAction="#ReadBDAll" text="Всех" />
+                        <MenuItem fx:id="ReadBDCat" mnemonicParsing="false" onAction="#ReadBDCat" text="Кошек" />
+                        <MenuItem fx:id="ReadBDDog" mnemonicParsing="false" onAction="#ReadBDDog" text="Собак" />
+                    </items>
+                  </Menu>
+               </items>
+            </Menu>
+            </menus>
+        </MenuBar>
+        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: White;" GridPane.columnIndex="1">
+            <children>
+                <Label fx:id="SimulationTimeLabel" layoutX="12.0" layoutY="3.0" prefHeight="19.0" prefWidth="142.0" text="Time" />
+            </children>
+        </Pane>
+    </children>
+</GridPane>
